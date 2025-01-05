@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:netflix_clone/core/configs/theme/app_colors.dart';
 import 'package:netflix_clone/core/configs/theme/app_theme.dart';
 import 'package:netflix_clone/presentation/splash/pages/splash.dart';
 
@@ -11,10 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: AppColors.transparentColor),
+    );
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Netflix clone',
-      theme: AppTheme.appTheme, 
+      theme: AppTheme.appTheme,
       home: SplashScreen(),
     );
   }
