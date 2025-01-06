@@ -7,4 +7,6 @@ class AppColors {
   static const whiteColor = Color(0xFFFFFFFF);
   static const hintColor = Color(0xffa7a7a7);
   static const transparentColor = Color(0x00000000);
+  static const fillColor = Color(0xff2c2b2b);
+  static const blueColor = Color(0xFF2196F3);
 }

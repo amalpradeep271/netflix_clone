@@ -12,7 +12,7 @@ class AppTheme {
     ),
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
-      fillColor: AppColors.secondBackgoundColor,
+      fillColor: AppColors.fillColor,
       hintStyle: TextStyle(
         color: AppColors.hintColor,
         fontWeight: FontWeight.w400,
@@ -30,6 +30,7 @@ class AppTheme {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,
+        foregroundColor: AppColors.whiteColor,
         elevation: 0,
         textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(100)),
