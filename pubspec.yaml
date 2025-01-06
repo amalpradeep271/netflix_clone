@@ -34,6 +34,9 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  get_it: ^8.0.3
+  logger: ^2.5.0
+  shared_preferences: ^2.3.5
 
 dev_dependencies:
   flutter_lints: ^5.0.0
