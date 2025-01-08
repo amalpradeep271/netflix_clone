@@ -12,26 +12,20 @@ class ButtonBloc extends Bloc<ButtonEvent, ButtonState> {
     ButtonExecuteEvent event,
     Emitter<ButtonState> emit,
   ) async {
-    print('ButtonExecuteEvent received');
     emit(ButtonLoadingState());
-    print('Emitting ButtonLoadingState');
 
     try {
       Either returnedData = await event.usecase.call(params: event.params);
       returnedData.fold(
         (error) {
           emit(ButtonFailureState(errorMessage: error));
-          print('Emitting ButtonFailureState');
         },
         (data) {
           emit(ButtonSuccessState());
-          print('Emitting ButtonSuccessState');
         },
       );
     } catch (e) {
       emit(ButtonFailureState(errorMessage: e.toString()));
-          print('Error caught: ${e.toString()}');
-
     }
   }
 }

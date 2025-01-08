@@ -9,6 +9,7 @@ import 'package:netflix_clone/service_locator.dart';
 abstract class AuthApiService {
   Future<Either> signUp(SignupReqParams params);
   Future<Either> signIn(SigninReqParams params);
+  Future<bool> isLoggedIn();
 }
 
 class AuthApiServiceImpl extends AuthApiService {
@@ -32,9 +33,15 @@ class AuthApiServiceImpl extends AuthApiService {
         ApiUrl.signin,
         data: params.toMap(),
       );
-      return response.data;
+      return Right(response.data);
     } on DioException catch (e) {
       return Left(e.response!.data['message']);
     }
+  }
+  
+  @override
+  Future<bool> isLoggedIn() {
+    // TODO: implement isLoggedIn
+    throw UnimplementedError();
   }
 }

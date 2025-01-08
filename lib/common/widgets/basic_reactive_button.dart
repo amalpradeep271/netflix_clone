@@ -10,11 +10,9 @@ class BasicReactiveButton extends StatelessWidget {
   final String title;
   final double? height;
   final Widget? content;
-  final ButtonBloc buttonBloc; // Add ButtonBloc dependency
 
   const BasicReactiveButton({
     required this.onPressed,
-    required this.buttonBloc,
     this.title = '',
     this.height,
     this.content,
@@ -24,10 +22,7 @@ class BasicReactiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ButtonBloc, ButtonState>(
-      bloc: buttonBloc, // Specify the ButtonBloc
       builder: (_, state) {
-        print('Current State in BasicReactiveButton: $state');
-
         if (state is ButtonLoadingState) {
           return _loading();
         }
@@ -56,8 +51,7 @@ class BasicReactiveButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         minimumSize: Size.fromHeight(height ?? 50),
       ),
-      child:
-          content ??
+      child: content ??
           Text(
             title,
             style: const TextStyle(

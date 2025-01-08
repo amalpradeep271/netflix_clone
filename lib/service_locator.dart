@@ -3,6 +3,7 @@ import 'package:netflix_clone/core/netwok/dio_client.dart';
 import 'package:netflix_clone/data/auth/repositories/auth.dart';
 import 'package:netflix_clone/data/auth/sources/auth_api_service.dart';
 import 'package:netflix_clone/domain/auth/repositories/auth.dart';
+import 'package:netflix_clone/domain/auth/usecases/is_loggedin_usecase.dart';
 import 'package:netflix_clone/domain/auth/usecases/signin_usecase.dart';
 import 'package:netflix_clone/domain/auth/usecases/signup_usecase.dart';
 
@@ -23,4 +24,5 @@ void setupServiceLocator() {
 
   sl.registerSingleton<SignupUseCase>(SignupUseCase());
   sl.registerSingleton<SigninUsecase>(SigninUsecase());
+  sl.registerSingleton<IsloggedinUsecase>(IsloggedinUsecase());
 }
