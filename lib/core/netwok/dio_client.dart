@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:netflix_clone/core/constants/api_url.dart';
 import 'package:netflix_clone/core/netwok/interceptors.dart';
 
 class DioClient {
@@ -7,7 +6,7 @@ class DioClient {
   DioClient()
     : _dio = Dio(
         BaseOptions(
-          baseUrl: ApiUrl.baseUrl,
+          // baseUrl: ApiUrl.baseUrl,
           headers: {'Content-Type': 'application/json; charset=UTF-8'},
           responseType: ResponseType.json,
           sendTimeout: const Duration(seconds: 10),

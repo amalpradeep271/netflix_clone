@@ -31,9 +31,11 @@ dependencies:
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
   dio: ^5.7.0
+  fan_carousel_image_slider: ^1.0.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
+  flutter_svg: ^2.0.16
   get_it: ^8.0.3
   logger: ^2.5.0
   shared_preferences: ^2.3.5
@@ -56,6 +58,7 @@ flutter:
   assets:
     - assets/images/
     - assets/gifs/
+    - assets/vectors/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

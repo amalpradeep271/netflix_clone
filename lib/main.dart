@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone/core/configs/theme/app_colors.dart';
 import 'package:netflix_clone/core/configs/theme/app_theme.dart';
-import 'package:netflix_clone/presentation/splash/bloc/splash_cubit.dart';
+import 'package:netflix_clone/presentation/splash/bloc/splash_bloc.dart';
+import 'package:netflix_clone/presentation/splash/bloc/splash_event.dart';
 import 'package:netflix_clone/presentation/splash/pages/splash.dart';
 import 'package:netflix_clone/service_locator.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       SystemUiOverlayStyle(statusBarColor: AppColors.transparentColor),
     );
     return BlocProvider(
-      create: (context) => SplashCubit()..appStarted(),
+      create: (context) => SplashBloc()..add(AppStartedEvent()),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Netflix clone',
