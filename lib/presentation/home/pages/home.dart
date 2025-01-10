@@ -4,6 +4,7 @@ import 'package:netflix_clone/common/widgets/custom_appbar.dart';
 import 'package:netflix_clone/core/configs/assets/app_vectors.dart';
 import 'package:netflix_clone/presentation/home/widgets/category_text.dart';
 import 'package:netflix_clone/presentation/home/widgets/now_playing_movies.dart';
+import 'package:netflix_clone/presentation/home/widgets/popular_tv.dart';
 import 'package:netflix_clone/presentation/home/widgets/trending_movies_sliders.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -34,6 +35,19 @@ class HomeScreen extends StatelessWidget {
             height: 10,
           ),
           NowplayingMovies(),
+          SizedBox(
+            height: 10,
+          ),
+          CategoryText(
+            title: "Popular Tv",
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          PopularTv(),
+          SizedBox(
+            height: 10,
+          ),
         ],
       )),
     );

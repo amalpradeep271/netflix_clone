@@ -7,5 +7,7 @@ class ApiUrl {
       "https://netflix-backend-production-8413.up.railway.app/api/v1/auth/signin";
   static const trendingMovies =
       "https://api.themoviedb.org/3/trending/movie/day";
-  static const nowplayingMovies = "https://api.themoviedb.org/3/movie/now_playing";
+  static const nowplayingMovies =
+      "https://api.themoviedb.org/3/movie/now_playing";
+  static const popularTv = "https://api.themoviedb.org/3/tv/popular";
 }
