@@ -2,9 +2,9 @@ import 'package:fan_carousel_image_slider/fan_carousel_image_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone/core/configs/assets/app_images.dart';
-import 'package:netflix_clone/presentation/home/bloc/trending_movie_bloc.dart';
-import 'package:netflix_clone/presentation/home/bloc/trending_movie_event.dart';
-import 'package:netflix_clone/presentation/home/bloc/trending_movie_state.dart';
+import 'package:netflix_clone/presentation/home/bloc/trendings/trending_movie_bloc.dart';
+import 'package:netflix_clone/presentation/home/bloc/trendings/trending_movie_event.dart';
+import 'package:netflix_clone/presentation/home/bloc/trendings/trending_movie_state.dart';
 
 class TrendingMovies extends StatelessWidget {
   const TrendingMovies({super.key});

@@ -9,4 +9,5 @@ class AppColors {
   static const transparentColor = Color(0x00000000);
   static const fillColor = Color(0xff2c2b2b);
   static const blueColor = Color(0xFF2196F3);
+  static const amberColor=Color(0xFFFFC107);
 }

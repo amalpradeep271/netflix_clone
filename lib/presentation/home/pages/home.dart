@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:netflix_clone/common/widgets/custom_appbar.dart';
 import 'package:netflix_clone/core/configs/assets/app_vectors.dart';
-import 'package:netflix_clone/core/configs/theme/app_colors.dart';
-import 'package:netflix_clone/presentation/home/widgets/trending.dart';
+import 'package:netflix_clone/presentation/home/widgets/category_text.dart';
+import 'package:netflix_clone/presentation/home/widgets/now_playing_movies.dart';
+import 'package:netflix_clone/presentation/home/widgets/trending_movies_sliders.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,15 +14,26 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: BasicAppbar(
         hideBack: true,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: SvgPicture.asset(AppVectors.logo),
-        ),
+        title: SvgPicture.asset(AppVectors.logo),
       ),
       body: SingleChildScrollView(
           child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          CategoryText(
+            title: "Trendings 🔥",
+          ),
           TrendingMovies(),
+          SizedBox(
+            height: 10,
+          ),
+          CategoryText(
+            title: "Now Playing",
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          NowplayingMovies(),
         ],
       )),
     );
