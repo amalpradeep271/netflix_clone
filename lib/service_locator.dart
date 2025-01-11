@@ -11,6 +11,7 @@ import 'package:netflix_clone/domain/auth/usecases/is_loggedin_usecase.dart';
 import 'package:netflix_clone/domain/auth/usecases/signin_usecase.dart';
 import 'package:netflix_clone/domain/auth/usecases/signup_usecase.dart';
 import 'package:netflix_clone/domain/movie/repositories/movie.dart';
+import 'package:netflix_clone/domain/movie/usecases/get_movie_trailer_usecase.dart';
 import 'package:netflix_clone/domain/movie/usecases/get_now_playing_movies_usecase.dart';
 import 'package:netflix_clone/domain/movie/usecases/get_trending_movies_usecase.dart';
 import 'package:netflix_clone/domain/tv/repositories/tv.dart';
@@ -42,4 +43,5 @@ void setupServiceLocator() {
   sl.registerSingleton<GetNowPlayingMoviesUsecase>(
       GetNowPlayingMoviesUsecase());
   sl.registerSingleton<GetPopularTvUsecase>(GetPopularTvUsecase());
+  sl.registerSingleton<GetMovieTrailerUsecase>(GetMovieTrailerUsecase());
 }

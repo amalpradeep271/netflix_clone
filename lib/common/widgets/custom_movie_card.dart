@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/common/helper/navigator/app_navigator.dart';
 import 'package:netflix_clone/core/configs/assets/app_images.dart';
 import 'package:netflix_clone/core/configs/theme/app_colors.dart';
 import 'package:netflix_clone/domain/movie/entities/movie.dart';
+import 'package:netflix_clone/presentation/watch/pages/watch.dart';
 
 class MovieCard extends StatelessWidget {
   final MovieEntity movieEntity;
@@ -11,7 +13,11 @@ class MovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //  AppNavigator.push(context, MovieWatchPage(movieEntity: movieEntity,));
+        AppNavigator.push(
+            context,
+            MovieWatchScreen(
+              movieEntity: movieEntity,
+            ));
       },
       child: Container(
         width: 180,

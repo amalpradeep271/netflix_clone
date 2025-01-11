@@ -7,6 +7,8 @@ import 'package:netflix_clone/service_locator.dart';
 abstract class MovieApiServices {
   Future<Either> getTrendingMovies();
   Future<Either> nowPlayingMovies();
+  Future<Either> getMovieTrailer(int movieId);
+  Future<Either> getRecommendationMovies(int movieId);
 }
 
 class MovieApiServicesImpl extends MovieApiServices {
@@ -26,6 +28,28 @@ class MovieApiServicesImpl extends MovieApiServices {
   Future<Either> nowPlayingMovies() async {
     try {
       var response = await sl<DioClient>().get(ApiUrl.nowplayingMovies);
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['status_message']);
+    }
+  }
+
+  @override
+  Future<Either> getMovieTrailer(int movieId) async {
+    try {
+      var response =
+          await sl<DioClient>().get('${ApiUrl.movieTrailer}$movieId/videos');
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['status_message']);
+    }
+  }
+
+  @override
+  Future<Either> getRecommendationMovies(int movieId) async {
+    try {
+      var response = await sl<DioClient>()
+          .get('${ApiUrl.recommendatioMovie}$movieId/recommendations');
       return Right(response.data);
     } on DioException catch (e) {
       return Left(e.response!.data['status_message']);

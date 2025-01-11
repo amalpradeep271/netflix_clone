@@ -10,4 +10,5 @@ class AppColors {
   static const fillColor = Color(0xff2c2b2b);
   static const blueColor = Color(0xFF2196F3);
   static const amberColor=Color(0xFFFFC107);
+  static const greyColor=Color(0xFF9E9E9E);
 }
