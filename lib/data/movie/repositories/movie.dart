@@ -1,4 +1,3 @@
-
 import 'package:dartz/dartz.dart';
 import 'package:netflix_clone/common/helper/mapper/movie_mapper.dart';
 import 'package:netflix_clone/common/helper/mapper/trailer_mapper.dart';
@@ -58,10 +57,21 @@ class MovieRepositoryImpl extends MovieRepository {
       },
     );
   }
-  
+
   @override
-  Future<Either> getRecommendationMovies(int movieId) {
-    // TODO: implement getRecommendationMovies
-    throw UnimplementedError();
+  Future<Either> getRecommendationMovies(int movieId) async {
+    var returnedData =
+        await sl<MovieApiServices>().getRecommendationMovies(movieId);
+    return returnedData.fold(
+      (error) {
+        return Left(error);
+      },
+      (data) {
+        var movies = List.from(data['results'])
+            .map((item) => MovieMapper.toEntity(MovieModel.fromJson(item)))
+            .toList();
+        return Right(movies);
+      },
+    );
   }
 }

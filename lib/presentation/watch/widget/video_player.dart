@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone/presentation/watch/bloc/trailer/trailer_bloc.dart';
 import 'package:netflix_clone/presentation/watch/bloc/trailer/trailer_event.dart';
@@ -16,7 +16,7 @@ class VideoPlayer extends StatelessWidget {
         child: BlocBuilder<TrailerBloc, TrailerState>(
           builder: (context, state) {
             if (state is TrailerLoading) {
-              return const Center(child: CircularProgressIndicator());
+              return const Center(child: CupertinoActivityIndicator());
             }
           
             if (state is TrailerLoaded) {

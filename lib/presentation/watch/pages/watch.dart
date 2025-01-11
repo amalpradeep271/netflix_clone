@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:netflix_clone/common/widgets/custom_appbar.dart';
 import 'package:netflix_clone/domain/movie/entities/movie.dart';
+import 'package:netflix_clone/presentation/watch/widget/recommentation_movies.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_overview.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_player.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_release_date.dart';
@@ -57,8 +58,12 @@ class MovieWatchScreen extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-            //   RecommendationMovies(movieId: movieEntity.id!,),
-            //   const SizedBox(height: 16,),
+            RecommendationMovies(
+              movieId: movieEntity.id!,
+            ),
+            const SizedBox(
+              height: 16,
+            ),
             //   SimilarMovies(movieId: movieEntity.id!,)
           ],
         ),

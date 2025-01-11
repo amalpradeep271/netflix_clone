@@ -36,7 +36,7 @@ class MovieCard extends StatelessWidget {
                   image: DecorationImage(
                       fit: BoxFit.fill,
                       image: NetworkImage(AppImages.movieImageBasePath +
-                          movieEntity.posterPath!)),
+                          movieEntity.posterPath.toString())),
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
@@ -52,7 +52,7 @@ class MovieCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      movieEntity.title!,
+                      movieEntity.title ?? "",
                       style: const TextStyle(
                           fontSize: 16,
                           overflow: TextOverflow.ellipsis,
@@ -67,7 +67,7 @@ class MovieCard extends StatelessWidget {
                           color: AppColors.amberColor,
                         ),
                         Text(
-                          movieEntity.voteAverage!.toStringAsFixed(1),
+                          movieEntity.voteAverage.toString(),
                           style: const TextStyle(fontSize: 10),
                         )
                       ],

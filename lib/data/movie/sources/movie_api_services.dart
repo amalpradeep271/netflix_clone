@@ -49,7 +49,7 @@ class MovieApiServicesImpl extends MovieApiServices {
   Future<Either> getRecommendationMovies(int movieId) async {
     try {
       var response = await sl<DioClient>()
-          .get('${ApiUrl.recommendatioMovie}$movieId/recommendations');
+          .get('${ApiUrl.movieTrailer}$movieId/recommendations');
       return Right(response.data);
     } on DioException catch (e) {
       return Left(e.response!.data['status_message']);
