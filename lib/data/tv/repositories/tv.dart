@@ -1,5 +1,7 @@
 import 'package:dartz/dartz.dart';
+import 'package:netflix_clone/common/helper/mapper/keyword_mapper.dart';
 import 'package:netflix_clone/common/helper/mapper/tv_mapper.dart';
+import 'package:netflix_clone/data/tv/models/keyword.dart';
 import 'package:netflix_clone/data/tv/models/tv.dart';
 import 'package:netflix_clone/data/tv/sources/tv_api_services.dart';
 import 'package:netflix_clone/domain/tv/repositories/tv.dart';
@@ -20,5 +22,44 @@ class TvRepositoryImpl extends TvRepository {
         return Right(movies);
       },
     );
+  }
+
+  @override
+  Future<Either> getRecommendationTv(int tvId) async {
+    var returnedData = await sl<TvApiServices>().getRecommendationTv(tvId);
+    return returnedData.fold((error) {
+      return Left(error);
+    }, (data) {
+      var movies = List.from(data['results'])
+          .map((item) => TvMapper.toEntity(TvModel.fromJson(item)))
+          .toList();
+      return Right(movies);
+    });
+  }
+
+  @override
+  Future<Either> getSimilarTv(int tvId) async {
+    var returnedData = await sl<TvApiServices>().getSimilarTv(tvId);
+    return returnedData.fold((error) {
+      return Left(error);
+    }, (data) {
+      var movies = List.from(data['results'])
+          .map((item) => TvMapper.toEntity(TvModel.fromJson(item)))
+          .toList();
+      return Right(movies);
+    });
+  }
+
+  @override
+  Future<Either> getKeywords(int tvId) async {
+    var returnedData = await sl<TvApiServices>().getSimilarTv(tvId);
+    return returnedData.fold((error) {
+      return Left(error);
+    }, (data) {
+      var keywords = List.from(data['results'])
+          .map((item) => KeywordMapper.toEntity(KeywordModel.fromJson(item)))
+          .toList();
+      return Right(keywords);
+    });
   }
 }

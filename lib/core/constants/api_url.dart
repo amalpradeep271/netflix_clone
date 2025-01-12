@@ -12,4 +12,5 @@ class ApiUrl {
   static const popularTv = "https://api.themoviedb.org/3/tv/popular";
   static const movieTrailer = "https://api.themoviedb.org/3/movie/";
   static const recommendatioMovie = "https://api.themoviedb.org/3/movie/";
+  static const tvBase = "https://api.themoviedb.org/3/tv/";
 }

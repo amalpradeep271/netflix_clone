@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:netflix_clone/common/helper/navigator/app_navigator.dart';
 import 'package:netflix_clone/core/configs/assets/app_images.dart';
 import 'package:netflix_clone/core/configs/theme/app_colors.dart';
 import 'package:netflix_clone/domain/tv/enitities/tv.dart';
+import 'package:netflix_clone/presentation/watch/pages/tv_watch.dart';
 
 class TVCard extends StatelessWidget {
   final TvEntity tvEntity;
@@ -11,7 +13,12 @@ class TVCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        //  AppNavigator.push(context, TVWatchPage(tvEntity: tvEntity,));
+        AppNavigator.push(
+          context,
+          TVWatchPage(
+            tvEntity: tvEntity,
+          ),
+        );
       },
       child: Container(
         width: 180,
