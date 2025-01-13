@@ -16,11 +16,14 @@ import 'package:netflix_clone/domain/movie/usecases/get_now_playing_movies_useca
 import 'package:netflix_clone/domain/movie/usecases/get_recommentation_movie_usecase.dart';
 import 'package:netflix_clone/domain/movie/usecases/get_similar_movies_usecase.dart';
 import 'package:netflix_clone/domain/movie/usecases/get_trending_movies_usecase.dart';
+import 'package:netflix_clone/domain/movie/usecases/search_movie_usecase.dart';
 import 'package:netflix_clone/domain/tv/repositories/tv.dart';
 import 'package:netflix_clone/domain/tv/usecases/get_keywords_usecase.dart';
 import 'package:netflix_clone/domain/tv/usecases/get_popular_tv_usecase.dart';
 import 'package:netflix_clone/domain/tv/usecases/get_recommended_tv_usecase.dart';
 import 'package:netflix_clone/domain/tv/usecases/get_similar_tv_usecase.dart';
+import 'package:netflix_clone/domain/tv/usecases/get_tv_trailer_usecase.dart';
+import 'package:netflix_clone/domain/tv/usecases/search_tv_usecase.dart';
 
 final sl = GetIt.instance;
 
@@ -49,6 +52,8 @@ void setupServiceLocator() {
       GetNowPlayingMoviesUsecase());
   sl.registerSingleton<GetPopularTvUsecase>(GetPopularTvUsecase());
   sl.registerSingleton<GetMovieTrailerUsecase>(GetMovieTrailerUsecase());
+  sl.registerSingleton<GetTvTrailerUsecase>(GetTvTrailerUsecase());
+
   sl.registerSingleton<GetRecommentationMoviesUsecase>(
       GetRecommentationMoviesUsecase());
   sl.registerSingleton<GetSimilarMoviesUsecase>(GetSimilarMoviesUsecase());
@@ -56,4 +61,6 @@ void setupServiceLocator() {
       GetRecommendationTvsUseCase());
   sl.registerSingleton<GetSimilarTvsUseCase>(GetSimilarTvsUseCase());
   sl.registerSingleton<GetTVKeywordsUseCase>(GetTVKeywordsUseCase());
+  sl.registerSingleton<SearchMovieUseCase>(SearchMovieUseCase());
+  sl.registerSingleton<SearchTVUseCase>(SearchTVUseCase());
 }

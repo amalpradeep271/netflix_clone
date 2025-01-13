@@ -8,7 +8,10 @@ abstract class TvApiServices {
   Future<Either> getPopularTv();
   Future<Either> getRecommendationTv(int tvId);
   Future<Either> getSimilarTv(int tvId);
+    Future<Either> getTvTrailer(int tvId);
+
   Future<Either> getKeywords(int tvId);
+  Future<Either> searchTV(String query);
 }
 
 class TvApiServicesImpl extends TvApiServices {
@@ -54,6 +57,29 @@ class TvApiServicesImpl extends TvApiServices {
       var response = await sl<DioClient>().get(
         '${ApiUrl.tvBase}$tvId/keywords',
       );
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['status_message']);
+    }
+  }
+  
+  @override
+  Future<Either> searchTV(String query)async {
+  try {
+      var response = await sl<DioClient>().get(
+        '${ApiUrl.searchTvs}$query&include_adult=false',
+      );
+      return Right(response.data);
+    } on DioException catch (e) {
+      return Left(e.response!.data['status_message']);
+    }
+  }
+  
+  @override
+  Future<Either> getTvTrailer(int tvId) async{
+   try {
+      var response =
+          await sl<DioClient>().get('${ApiUrl.getTvTrailer}$tvId/videos');
       return Right(response.data);
     } on DioException catch (e) {
       return Left(e.response!.data['status_message']);

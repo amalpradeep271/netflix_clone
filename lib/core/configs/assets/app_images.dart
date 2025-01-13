@@ -3,4 +3,6 @@ class AppImages {
 
   static const basePath = "assets/images/";
   static const splashBackground = "assets/images/n.jpg";
+  static const defaultImage =
+      'https://coffective.com/wp-content/uploads/2018/06/default-featured-image.png.jpg';
 }

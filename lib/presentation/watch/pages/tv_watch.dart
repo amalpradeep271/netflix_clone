@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/common/widgets/custom_appbar.dart';
+import 'package:netflix_clone/common/widgets/tv_video_player.dart';
 import 'package:netflix_clone/domain/tv/enitities/tv.dart';
 import 'package:netflix_clone/presentation/watch/widget/recommentation_tvs.dart';
 import 'package:netflix_clone/presentation/watch/widget/similar_tvs.dart';
 import 'package:netflix_clone/presentation/watch/widget/tv_keywords.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_overview.dart';
-import 'package:netflix_clone/presentation/watch/widget/video_player.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_title.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_vote_average.dart';
 
@@ -24,7 +24,7 @@ class TVWatchPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            VideoPlayer(id: tvEntity.id!),
+            TvVideoPlayer(id: tvEntity.id!),
             const SizedBox(
               height: 16,
             ),
@@ -34,7 +34,7 @@ class TVWatchPage extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-              (
+            TVKeywords(
               tvId: tvEntity.id!,
             ),
             const SizedBox(

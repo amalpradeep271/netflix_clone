@@ -6,7 +6,7 @@ import 'package:netflix_clone/domain/movie/entities/movie.dart';
 import 'package:netflix_clone/presentation/watch/widget/recommentation_movies.dart';
 import 'package:netflix_clone/presentation/watch/widget/similar_movies.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_overview.dart';
-import 'package:netflix_clone/presentation/watch/widget/video_player.dart';
+import 'package:netflix_clone/common/widgets/video_player.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_release_date.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_title.dart';
 import 'package:netflix_clone/presentation/watch/widget/video_vote_average.dart';
